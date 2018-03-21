@@ -123,7 +123,7 @@
                   </div>
                 </div>
                 <div class="order_msg">
-                  <p>预约人：xxxxxx</p>
+                  <p>预约人：xxxx</p>
                   <p>预约人手机号：{{item.meetTeacherPhone}}</p>
                 </div>
               </div>
