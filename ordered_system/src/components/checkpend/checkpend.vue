@@ -45,7 +45,7 @@
                 <p>老师电话：</p>
              </div> 
        </div>
-       <cube-button @click="showBtn">Dialog - btn</cube-button>
+       <cube-button @click="showBtn">Dialog - btxn</cube-button>
   </div>
 </template>
 <script>
