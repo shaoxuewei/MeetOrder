@@ -4,7 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const vuxLoader = require('vux-loader')
-
+var PostCompilePlugin = require('webpack-post-compile-plugin')
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -29,7 +29,8 @@ let webpackConfig = {
       'components':resolve('src/components'),
       'base':resolve('src/base'),
       'api':resolve('src/api'),
-      'common':resolve('src/common')
+      'common':resolve('src/common'),
+      'cube-ui': 'cube-ui/lib'
     }
   },
   module: {
@@ -74,5 +75,6 @@ let webpackConfig = {
 
 
 module.exports = vuxLoader.merge(webpackConfig, {
-  plugins: ['vux-ui', 'progress-bar', 'duplicate-style']
+  plugins: ['vux-ui', 'progress-bar', 'duplicate-style',new PostCompilePlugin()],
+  
 })

@@ -45,10 +45,12 @@
                 <p>老师电话：</p>
              </div> 
        </div>
+       <cube-button @click="showBtn">Dialog - btn</cube-button>
   </div>
 </template>
 <script>
 import { getmeetstate, updatemeeting } from "api/meeting-controller.js";
+import { Dialog } from 'cube-ui';
 export default {
   data() {
     return {
@@ -76,6 +78,40 @@ export default {
     this.TimeA = this.$route.query.TimeA;
   },
   methods: {
+     showBtn() {
+      this.$createDialog({
+        type: 'confirm',
+        icon: 'cubeic-alert',
+        title: '我是标题',
+        content: '我是内容',
+        confirmBtn: {
+          text: '确定按钮',
+          active: true,
+          disabled: false,
+          href: 'javascript:;'
+        },
+        cancelBtn: {
+          text: '取消按钮',
+          active: false,
+          disabled: false,
+          href: 'javascript:;'
+        },
+        onConfirm: () => {
+          this.$createToast({
+            type: 'warn',
+            time: 1000,
+            txt: '点击确认按钮'
+          }).show()
+        },
+        onCancel: () => {
+          this.$createToast({
+            type: 'warn',
+            time: 1000,
+            txt: '点击取消按钮'
+          }).show()
+        }
+      }).show()
+    },
     back() {
       this.$router.back();
     },
