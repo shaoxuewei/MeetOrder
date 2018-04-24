@@ -29,7 +29,9 @@ let webpackConfig = {
       'components':resolve('src/components'),
       'base':resolve('src/base'),
       'api':resolve('src/api'),
-      'common':resolve('src/common')
+      'common':resolve('src/common'),
+      'cube-ui': 'cube-ui/lib',
+      'jquery':resolve('node_modules/jquery/src/jquery')
     }
   },
   module: {

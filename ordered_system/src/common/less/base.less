@@ -6,6 +6,9 @@ body, html{
   background: #fff;
   color: #000;
 }
+::-webkit-scrollbar{
+  display: none;
+}
 .clearfix:after{
   display: block;
   clear: both;
@@ -19,8 +22,115 @@ li{
 .clearfix{
   zoom:1;
 }
-.vux-icon-dot{
-  width:50px;
-  height:50px;
-  border-radius: 25px;
+
+.vux-slider > .vux-indicator > a, .vux-slider .vux-indicator-right > a{
+  margin-left:.4rem !important;
+}
+
+.vux-slider > .vux-indicator > a > .vux-icon-dot, .vux-slider .vux-indicator-right > a > .vux-icon-dot{
+  width:.266667rem !important;
+  height:.266667rem !important;
+  border-radius: .266667rem !important;
+  margin-bottom:.133333rem;
+}
+.cube-btn{
+  display:none !important;
+}
+
+.cube-dialog-main{
+  width:6.666667rem !important;
+}
+
+.cube-dialog-title-def{
+  font-size:.4rem !important;
+}
+
+.cube-upload-btn-def{
+  width:2rem !important;
+  height:2rem !important;
+  border:.026667rem dashed rgb(179, 173, 173) !important;
+}
+
+.cube-upload-file .cube-upload-file-def{
+  width:2rem !important;
+  height:2rem !important;
+}
+
+.cube-upload-def .cube-upload-btn, .cube-upload-def .cube-upload-file{
+        margin-right:.4rem !important;
+        margin-bottom:.4rem !important;
+}
+
+.weui-cells{
+  margin-top:0 !important;
+  height:1.026667rem !important;
+  // line-height:1.026667rem !important;
+  border-bottom:1px solid rgb(244,244,244);
+}
+
+.vux-cell-value{
+  margin-right:3.466667rem !important;
+}
+.weui-cell{
+  padding:.133333rem 0 0 .133333rem !important;
+}
+.weui-cells p{
+  color:#000 !important;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
+.cube-select{
+  padding-top:.066667rem !important;
+  top:.666667rem !important;
+  height:0.933333rem !important;
+  line-height:0.72rem !important;
+  width:9.2rem !important;
+  border-radius: 0.333333rem !important;
+  margin:0 auto !important;
+  padding-left:0.426667rem !important;
+  font-size:.186667rem !important;
+}
+.cube-select>i{
+  border-width:.16rem .16rem !important;
+  right:.4rem !important;
+  top:.533333rem !important;
+}
+.cube-select:after{
+  border:none !important;
+}
+.cube-select-text,.cube-select>i{
+  color:rgb(153,153,153);
+}
+.weui-cells p{
+  font-family:"Microsoft YaHei" !important;
+}
+.weui-cell_access .weui-cell__ft{
+
+}
+.weui-icon-warn{
+  font-size:.186667rem;
+}
+.weui-cell_access .weui-cell__ft:after{
+  
+  border-width:.053333rem .053333rem 0 0 !important;
+  width:.2rem !important;
+  height:.2rem !important;
+  margin-top:-0.1rem !important;
+}
+
+.cube-dialog-content-def p{
+  text-align:center !important;
+  line-height:.533333rem !important;
+}
+.cube-dialog-btns a{
+  color:rgb(0,176,215) !important;
+}
+.dp-header .dp-item.dp-right{
+  color:rgb(0,176,215) !important;
+}
+.vux-slider > .vux-indicator > a > .vux-icon-dot.active, .vux-slider .vux-indicator-right > a > .vux-icon-dot.active{
+  background:rgb(0,176,215) !important;
+}
+.cube-picker-choose>[data-action=confirm]{
+  color:rgb(0,176,215) !important;
 }

@@ -12,8 +12,8 @@ export default {
         width:100%;
         text-align:center;
         .desc{
-            line-height:20px;
-            font-size:25px;
+            line-height:.266667rem;
+            font-size:.333333rem;
             color:#000;
         }
     }

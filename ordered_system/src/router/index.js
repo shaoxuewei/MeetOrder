@@ -41,7 +41,7 @@ export default new Router({
         {
           path: ':id',
           component: OrderDetail
-        }
+        },
       ]
     },
     {
@@ -53,8 +53,8 @@ export default new Router({
       component: Checkpend
     },
     {
-      path: '/check-table',
-      component: CheckTable
+      path:'/check-table',
+      component:CheckTable 
     }
   ]
 })

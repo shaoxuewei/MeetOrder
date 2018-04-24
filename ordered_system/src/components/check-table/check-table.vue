@@ -2,65 +2,38 @@
 <transition name="slide">
   <div class="check_table">
       <header>
-        <div class="icon-buoumaotubiao53" @click="back"></div>
         <h2>审批表</h2>
       </header>
-      <h2>审核表格</h2>
-      <table>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-     
-    </table>
+      <div class="pic">
+        <img :src="Img" alt="审核表" />
+      </div>
   </div>
-  <!-- <tab></tab> -->
   </transition>    
 </template>
 <script>
+import { getImg } from 'api/order-detail'
 // import Tab from 'base/tab/tab.vue'
 export default {
+  data(){
+    return{
+      Img:'http://118.178.94.113:92/webapi-0.0.1-SNAPSHOT/'
+    }
+  },
   methods: {
-    back() {
-      this.$router.back();
+   _getImg(){
+     getImg().then((res)=>{
+       if(res.code===0){
+         let ImgUrl=res.data[0].url;
+         this.Img=this.Img+ImgUrl;
+       }
+     })
+   }
+  },
+  created(){
+    if(this.$route.query.meetimg){
+      this.Img=this.$route.query.meetimg
+    }else{
+      this._getImg();
     }
   },
   components: {
@@ -78,33 +51,43 @@ export default {
   transform: translate3d(100%, 0, 0);
 }
 .check_table {
-  background: #fff;
+  position: absolute;;
+  top:0px;
+  left:0px;
+  bottom:0px;
+  right:0px;
+  z-index:100;
+  overflow: auto;
+  background: #ffffff;
   text-align: center;
+  .pic{
+    margin-top:.666667rem;
+  }
   header {
-    height: 100px;
+    height: 1.333333rem;
     width: 100%;
-    background: black;
+    background: rgb(244,244,244);
     text-align: center;
     position: relative;
     div {
-      font-size: 40px;
+      font-size: .533333rem;
       display: inline-block;
       color: #fff;
       position: absolute;
-      left: 35px;
-      top: 20px;
+      left: .466667rem;
+      top: .266667rem;
     }
     h2 {
       display: inline-block;
-      font-size: 38px;
-      color: #fff;
-      line-height: 60px;
-      letter-spacing: 8px;
+      font-size: .506667rem;
+      color:#222222;
+      line-height: .8rem;
+      letter-spacing: .106667rem;
     }
   }
   h2 {
-    font-size: 40px;
-    margin: 20px 0;
+    font-size: .533333rem;
+    margin: .266667rem 0;
   }
 }
 table {
@@ -118,8 +101,8 @@ th {
   border: 1px solid black;
   width: 20%;
   text-align: center;
-  height: 50px;
-  line-height: 50px;
+  height: .666667rem;
+  line-height: .666667rem;
 }
 </style>
 

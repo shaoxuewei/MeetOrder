@@ -1,4 +1,4 @@
-import { GetAccessTokenApi, GetTicketApi } from "./api/api";
+// import { GetAccessTokenApi, GetTicketApi } from "./api/api";
 window.onload = function () {
     document.body.ontouchmove = function (e) {
         e.preventDefault();
@@ -26,6 +26,7 @@ if (sessionStorage.getItem('openid') == null) {
         access_code = sessionStorage.getItem('code')
     }
     if (sessionStorage.getItem('code') == null || sessionStorage.getItem('code') == "") {
+        // 改appid和uri地址
         var url = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx965f031c1746f165&redirect_uri=http%3a%2f%2ftest.heiniaozhi.cn%2fWeiXin%2f%23%2f&response_type=code&scope=snsapi_userinfo#wechat_redirect';
         location.href = url;
     } else {

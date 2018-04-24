@@ -1,11 +1,11 @@
 <template>
    <div class="tab">
        <router-link tag="div" class="tab-item tab-link" to="/home">
-            <span class="icon-fangzi"></span>
+            <span class="icon-fangz"></span>
             <span>{{index}}</span>
        </router-link>
        <router-link tag="div" class="tab-item tab-link" to="/user-center">
-            <span class="icon-ren"></span>
+            <span class="icon-re"></span>
             <span>{{UserCenter}}</span>
        </router-link>
    </div>
@@ -28,37 +28,47 @@ export default {
     .tab{
         display:flex;
         width: 100%;
-        height: 100px;
-        line-height:100px;
+        height: 1.333333rem;
+        line-height:1.333333rem;
         position: fixed;
         left: 0;
         bottom: 0;
         background-color: #fff;
-        font-size:35px;
+        font-size:.466667rem;
         .tab-item{
           flex:1;
           text-align:center;
-          margin-left:-20px;
-          border-top:7px solid transparent;
-        // &.tab-link{
-        //     border-top:7px solid green;
-        //     border-right:1px solid green;
-        //     span{
-        //         color:green;
-        //     }
-        // } 
+          margin-left:-.266667rem;
+          border-top:1px solid transparent;
+          span{
+            vertical-align: middle;
+          }
+          .icon-fangz,.icon-re{
+            display:inline-block;
+            width:.6rem;
+            height:.6rem;
+            background-image: url("../../common/image/home1.png");
+            background-size:.6rem .6rem;
+          }
+          .icon-fangz{
+            background-image: url("../../common/image/home1.png");
+          }
+          .icon-re{
+            background-image: url("../../common/image/order.png");
+          }
         &.router-link-active{
             &.tab-link{
-                border-top:7px solid green;
-                border-right:1px solid green;
-                border-left:1px solid green;
+                border-top:1px solid rgb(244,244,244);
+                .icon-fangz{
+                  background-image: url("../../common/image/home.png");
+                }
+                .icon-re{
+                  background-image: url("../../common/image/order1.png");
+                }
                 span{
-                    color:green;
+                    color:rgb(0,176,215)
                  }
-            } 
-        } 
-        .icon-fangzi,.icon-ren{
-            font-size:45px;
+            }
           }
         }
     }

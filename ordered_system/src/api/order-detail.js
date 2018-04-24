@@ -15,3 +15,9 @@ export function getinsertmeeting(MSG){
 export function StateController(ID){
     return fetch.get(url+'/getStateByMeetIdForDate'+'?stateRoomId='+ID)
 } 
+export function UploadImg(MSG,ext){
+    return fetch.post(url+'/UploadImg?ext='+ext,MSG)
+}
+export function getImg(){
+    return fetch.get(url+'/getexamineImg')
+}
